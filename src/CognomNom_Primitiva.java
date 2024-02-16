@@ -49,7 +49,7 @@ public class CognomNom_Primitiva {
      */
     private static int[] introduirAposta(){
         System.out.println("Introdueix la teva aposta: ");
-        int[] aposta = null;
+        //int[] aposta = null;
 
         //TODO: Fer el codi del mètode
 
@@ -62,7 +62,7 @@ public class CognomNom_Primitiva {
      * @since 1.0
      */
     private static int[] calcularCombinacioGuanyadora(){
-        int[] combinacio = null;
+        //int[] combinacio = null;
 
         //TODO: Fer el codi del mètode
 
@@ -83,13 +83,25 @@ public class CognomNom_Primitiva {
 
         //Comprobar encerts a la combinació
         //TODO: Fer el codi del mètode
-
+        for (int i = 0; i < aposta.length; i++){
+            for (int j = 0; j < combinacioGuanyadora.length; j++){
+                if (aposta[i] == combinacioGuanyadora[j]){
+                    encerts++;
+                }
+            }
+        }
         //Comprobar reintegrament
         //TODO: Fer el codi del mètode
-
+        if (combinacioGuanyadora[6] == aposta[6]){
+            reintregrament = true;
+        }
         //Calcular premi
         //TODO: Fer el codi del mètode
-
+        if (reintregrament) {
+            premi = encerts * 20 + 6;
+        } else {
+            premi = encerts * 20;
+        }
         return premi;
     }
 
