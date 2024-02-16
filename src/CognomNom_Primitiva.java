@@ -10,18 +10,22 @@ import java.util.Scanner;
 public class CognomNom_Primitiva {
     /**
      * Mètode main executable
+     *
      * @param args
      * @since 1.0
      */
     public static void main(String[] args) {
         menuPrincipal();
     }
-    Scanner llegir=new Scanner(System.in);
+
+    Scanner llegir = new Scanner(System.in);
+
     /**
      * //TODO: Completar
+     *
      * @since 1.0
      */
-    private static void menuPrincipal(){
+    private static void menuPrincipal() {
         System.out.println("***** PRIMITIVA ******");
 
         int[] aposta = introduirAposta();
@@ -39,29 +43,38 @@ public class CognomNom_Primitiva {
         }
 
         premi = comprovarEncerts(aposta, combinacioGuanyadora);
-        System.out.println("El teu premi és: "+premi+" €");
+        System.out.println("El teu premi és: " + premi + " €");
     }
 
     /**
      * //TODO: Completasr
+     *
      * @return //TODO: Completar
      * @since 1.0
      */
-    private static int[] introduirAposta(){
-        Scanner llegir=new Scanner(System.in);
-        System.out.println("Introdueix la teva aposta: ");
-        int numero1=llegir.nextInt();
-        int[] aposta = null;
-
+    private static int[] introduirAposta() {
+        Scanner llegir = new Scanner(System.in);
+        int[] aposta=new int [7];
+        int numerosUsuaris;
         //TODO: Fer el codi del mètode
-        if((numero1>=1) & (numero1<=49)) {
-            for (int i = 0; i < aposta.length; i++) {
-                aposta [i]+=numero1;
+
+        do {
+            for (int i = 0; i < 6; i++) {
+                System.out.println("Introdueix la teva aposta: " + (i + 1) + "");
+                numerosUsuaris = llegir.nextInt();
+                if ((numerosUsuaris >= 1) & (numerosUsuaris <= 49)) {
+                    aposta[i] += numerosUsuaris;
+                }
             }
+            System.out.println("Introduce el ultimo numero:");
+            int ultimonumero = llegir.nextInt();
+            if ((ultimonumero >= 1) & (ultimonumero <= 9)) {
+                aposta[7]+= ultimonumero;
+            }
+        }while (!llegir.hasNextInt());
+                return aposta;
         }
 
-        return aposta;
-    }
 
 
     /**
