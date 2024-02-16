@@ -16,7 +16,7 @@ public class CognomNom_Primitiva {
     public static void main(String[] args) {
         menuPrincipal();
     }
-
+    Scanner llegir=new Scanner(System.in);
     /**
      * //TODO: Completar
      * @since 1.0
@@ -48,13 +48,21 @@ public class CognomNom_Primitiva {
      * @since 1.0
      */
     private static int[] introduirAposta(){
+        Scanner llegir=new Scanner(System.in);
         System.out.println("Introdueix la teva aposta: ");
+        int numero1=llegir.nextInt();
         int[] aposta = null;
 
         //TODO: Fer el codi del mètode
+        if((numero1>=1) & (numero1<=49)) {
+            for (int i = 0; i < aposta.length; i++) {
+                aposta [i]+=numero1;
+            }
+        }
 
         return aposta;
     }
+
 
     /**
      * //TODO: Completar
