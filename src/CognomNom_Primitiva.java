@@ -58,17 +58,53 @@ public class CognomNom_Primitiva {
 
     /**
      * //TODO: Completasr
-     * @return //TODO: Completar
+     *
+     * @return array de la apuesta del usuario //TODO: Completar
      * @since 1.0
      */
-    private static int[] introduirAposta(){
-        System.out.println("Introdueix la teva aposta: ");
-        int[] aposta = null;
-
+    private static int[] introduirAposta() {
+        Scanner llegir = new Scanner(System.in);
+        int[] aposta = new int[7];
+        int numerosUsuaris;
+        int ultimonumero;
         //TODO: Fer el codi del mètode
+        for (int i = 0; i < aposta.length-1; i++) {
+            System.out.println("Introduce tu apuesta: " + (i + 1) + "");
+            while (!llegir.hasNextInt()) {
+                System.out.println("Entrada inválida. Introduce un número entero.");
+                llegir.next();
+            }
+            numerosUsuaris = llegir.nextInt();
+            if (numerosUsuaris >= 1 && numerosUsuaris <= 49) {
+                aposta[i] = numerosUsuaris;
+            } else {
+                System.out.println("Número fuera del interval permitido. Introduce otro número.");
+                i--;
+            }
+        }
+        do {
+            System.out.println("Introduce el ultimo numero(de 1 a 9):");
+            while (!llegir.hasNextInt()) {
+                System.out.println("Entrada inválida. Introduce un número entero.");
+                llegir.next();
+            }
+            ultimonumero = llegir.nextInt();
 
+            if (ultimonumero >= 1 && ultimonumero <= 9) {
+                aposta[6] = ultimonumero;
+            } else {
+                System.out.println("Número de reintegrament fora de l'interval permès.");
+            }
+        }while (!(ultimonumero >= 1 && ultimonumero <= 9));
+
+        System.out.println("La teva aposta és: ");
+        for (int i = 0; i < aposta.length; i++) {
+            System.out.print(aposta[i] + " ");
+        }
+        System.out.println();
         return aposta;
     }
+
 
 
 
