@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/LaPrimitiva - GRUP1.iml" filepath="$PROJECT_DIR$/LaPrimitiva - GRUP1.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/Practica_LaPrimitiva.iml" filepath="$PROJECT_DIR$/Practica_LaPrimitiva.iml" />
+>>>>>>> d7046b4fb07ad00cbf2f0966b784f00c88c40e57
     </modules>
   </component>
 </project>
