@@ -3,11 +3,11 @@ import java.util.Scanner;
 
 /**
  * Programa de simulació de La Primitiva
- * @auhor //TODO: Nom Alumne
+ * https://github.com/gr1f0x/LaPrimitiva
+ * @auhor Satenik Avetisyan - Carla Ramos - Joshua Abril
  * @version 1.0
  * @date 18-02-2024
  */
-//TODO: Fer refractor per canviar el nom de la classe
 public class CognomNom_Primitiva {
     /**
      * Mètode main executable
@@ -154,9 +154,9 @@ public class CognomNom_Primitiva {
     /**
      * Compara los numeros de los arrays aposta y combinacioGuanyadora y da dinero en base a los numeros
      *
-     * @param aposta
-     * @param combinacioGuanyadora //TODO: Completar
-     * @return //TODO: Completar
+     * @param aposta // Array de los inputs del usuario
+     * @param combinacioGuanyadora // Array de numeros Randoms
+     * @return premi // Devuelve el numero de dinero
      * @since 1.0
      */
     private static int comprovarEncerts(int[] aposta, int[] combinacioGuanyadora){
