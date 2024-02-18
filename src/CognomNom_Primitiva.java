@@ -21,25 +21,38 @@ public class CognomNom_Primitiva {
      * //TODO: Completar
      * @since 1.0
      */
-    private static void menuPrincipal(){
+
+    private static void menuPrincipal() {
+        Scanner llegir = new Scanner(System.in);
         System.out.println("***** PRIMITIVA ******");
+        int opcionMenu;
+        do {
+            System.out.println("Loteria \n1. Hacer Apuesta \n2. Girar el Bombo \n3. Juego nuevo \n4. Salir");
+            opcionMenu = llegir.nextInt();
+            int[] aposta = new int[7];
 
-        int[] aposta = introduirAposta();
-        int[] combinacioGuanyadora = calcularCombinacioGuanyadora();
-        int premi;
+            switch (opcionMenu) {
+                case 1:
+                    aposta = introduirAposta();
+                case 2:
+                    int[] combinacioGuanyadora = calcularCombinacioGuanyadora();
 
-        if (combinacioGuanyadora != null) {
-            System.out.println("La combinació ganadora és: ");
+                    int premi;
 
-            for (int i = 0; i < combinacioGuanyadora.length - 1; i++) {
-                System.out.print(combinacioGuanyadora[i] + " ");
+                    if (combinacioGuanyadora != null) {
+                        System.out.println("La combinació ganadora és: ");
+                        for (int i = 0; i < combinacioGuanyadora.length - 1; i++) {
+                            System.out.print(combinacioGuanyadora[i] + " ");
+                        }
+                        System.out.println("Reintegrament " + combinacioGuanyadora[combinacioGuanyadora.length - 1]);
+                    }
+
+                    premi = comprovarEncerts(aposta, combinacioGuanyadora);
+                    System.out.println("El teu premi és: " + premi + " €");
+                case 3:
+                default:
             }
-
-            System.out.println("Reintegrament " + combinacioGuanyadora[combinacioGuanyadora.length - 1]);
-        }
-
-        premi = comprovarEncerts(aposta, combinacioGuanyadora);
-        System.out.println("El teu premi és: "+premi+" €");
+        } while (opcionMenu != 4);
     }
 
     /**
@@ -49,7 +62,7 @@ public class CognomNom_Primitiva {
      */
     private static int[] introduirAposta(){
         System.out.println("Introdueix la teva aposta: ");
-        //int[] aposta = null;
+        int[] aposta = null;
 
         //TODO: Fer el codi del mètode
 
@@ -62,7 +75,7 @@ public class CognomNom_Primitiva {
      * @since 1.0
      */
     private static int[] calcularCombinacioGuanyadora(){
-        //int[] combinacio = null;
+        int[] combinacio = null;
 
         //TODO: Fer el codi del mètode
 
