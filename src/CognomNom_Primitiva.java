@@ -60,8 +60,10 @@ public class CognomNom_Primitiva {
 
 
     /**
-     * //TODO: Completar
-     * @return //TODO: Completar
+     * Aquest metode genera una combinació guanyadora per a un joc de loteria.
+     * La combinació consta de 6 números aleatoris del 1 al 49, sense repeticions,
+     * i un número addicional del 0 al 9.
+     * @return un array d'enters que representa la combinació guanyadora
      * @since 1.0
      */
 
