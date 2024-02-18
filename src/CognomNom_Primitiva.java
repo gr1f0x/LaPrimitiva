@@ -49,7 +49,7 @@ public class CognomNom_Primitiva {
     /**
      * //TODO: Completasr
      *
-     * @return //TODO: Completar
+     * @return array de la apuesta del usuario //TODO: Completar
      * @since 1.0
      */
     private static int[] introduirAposta() {
@@ -60,6 +60,10 @@ public class CognomNom_Primitiva {
         //TODO: Fer el codi del mètode
                 for (int i = 0; i < aposta.length-1; i++) {
                     System.out.println("Introduce tu apuesta: " + (i + 1) + "");
+                    while (!llegir.hasNextInt()) {
+                        System.out.println("Entrada inválida. Introduce un número entero.");
+                        llegir.next();
+                    }
                     numerosUsuaris = llegir.nextInt();
                     if (numerosUsuaris >= 1 && numerosUsuaris <= 49) {
                         aposta[i] = numerosUsuaris;
@@ -70,6 +74,10 @@ public class CognomNom_Primitiva {
                 }
                 do {
                 System.out.println("Introduce el ultimo numero(de 1 a 9):");
+                    while (!llegir.hasNextInt()) {
+                        System.out.println("Entrada inválida. Introduce un número entero.");
+                        llegir.next();
+                    }
                 ultimonumero = llegir.nextInt();
 
                     if (ultimonumero >= 1 && ultimonumero <= 9) {
