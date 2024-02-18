@@ -5,7 +5,7 @@ import java.util.Scanner;
  * Programa de simulació de La Primitiva
  * @auhor //TODO: Nom Alumne
  * @version 1.0
- * @date //TODO: data
+ * @date 18-02-2024
  */
 //TODO: Fer refractor per canviar el nom de la classe
 public class CognomNom_Primitiva {
@@ -17,11 +17,6 @@ public class CognomNom_Primitiva {
     public static void main(String[] args) {
         menuPrincipal();
     }
-
-    /**
-     * //TODO: Completar
-     * @since 1.0
-     */
 
     private static void menuPrincipal() {
         Scanner llegir = new Scanner(System.in);
@@ -57,9 +52,9 @@ public class CognomNom_Primitiva {
     }
 
     /**
-     * //TODO: Completasr
+     * Le pide al usuario numeros para la apuesta con control de errores
      *
-     * @return array de la apuesta del usuario //TODO: Completar
+     * @return array de la apuesta del usuario
      * @since 1.0
      */
     private static int[] introduirAposta() {
@@ -133,8 +128,9 @@ public class CognomNom_Primitiva {
 
 
     /**
-     * //TODO: Completar
-     * @param aposta //TODO: Completar
+     * Compara los numeros de los arrays aposta y combinacioGuanyadora y da dinero en base a los numeros
+     *
+     * @param aposta
      * @param combinacioGuanyadora //TODO: Completar
      * @return //TODO: Completar
      * @since 1.0
@@ -145,7 +141,6 @@ public class CognomNom_Primitiva {
         boolean reintregrament = false;
 
         //Comprobar encerts a la combinació
-        //TODO: Fer el codi del mètode
         for (int i = 0; i < aposta.length; i++){
             for (int j = 0; j < combinacioGuanyadora.length; j++){
                 if (aposta[i] == combinacioGuanyadora[j]){
@@ -154,12 +149,10 @@ public class CognomNom_Primitiva {
             }
         }
         //Comprobar reintegrament
-        //TODO: Fer el codi del mètode
         if (combinacioGuanyadora[6] == aposta[6]){
             reintregrament = true;
         }
         //Calcular premi
-        //TODO: Fer el codi del mètode
         if (reintregrament) {
             premi = encerts * 20 + 6;
         } else {
