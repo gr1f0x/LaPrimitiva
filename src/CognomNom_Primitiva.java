@@ -30,6 +30,7 @@ public class CognomNom_Primitiva {
             switch (opcionMenu) {
                 case 1:
                     aposta = introduirAposta();
+                    break;
                 case 2:
                     int[] combinacioGuanyadora = calcularCombinacioGuanyadora();
 
@@ -45,8 +46,14 @@ public class CognomNom_Primitiva {
 
                     premi = comprovarEncerts(aposta, combinacioGuanyadora);
                     System.out.println("El teu premi és: " + premi + " €");
+                    break;
                 case 3:
+                    aposta = null;
+                    combinacioGuanyadora = null;
+                    System.out.println("Ya puedes volver a jugar");
+                    break;
                 default:
+                    break;
             }
         } while (opcionMenu != 4);
     }
@@ -60,43 +67,50 @@ public class CognomNom_Primitiva {
     private static int[] introduirAposta() {
         Scanner llegir = new Scanner(System.in);
         int[] aposta = new int[7];
-        int numerosUsuaris;
-        int ultimonumero;
-        //TODO: Fer el codi del mètode
-        for (int i = 0; i < aposta.length-1; i++) {
-            System.out.println("Introduce tu apuesta: " + (i + 1) + "");
-            while (!llegir.hasNextInt()) {
-                System.out.println("Entrada inválida. Introduce un número entero.");
-                llegir.next();
-            }
-            numerosUsuaris = llegir.nextInt();
-            if (numerosUsuaris >= 1 && numerosUsuaris <= 49) {
-                aposta[i] = numerosUsuaris;
-            } else {
-                System.out.println("Número fuera del interval permitido. Introduce otro número.");
-                i--;
-            }
+        boolean[] numerosRepetidos = new boolean[50]; // Un booleano para cada número de 1 a 49
+
+        for (int i = 0; i < aposta.length - 1; i++) {
+            int numeroUsuario;
+            boolean repetido;
+            do {
+                repetido = false;
+                System.out.println("Introduce tu apuesta número " + (i + 1) + ":");
+                while (!llegir.hasNextInt()) {
+                    System.out.println("Entrada inválida. Introduce un número entero.");
+                    llegir.next();
+                }
+                numeroUsuario = llegir.nextInt();
+
+                if (numeroUsuario >= 1 && numeroUsuario <= 49) {
+                    if (numerosRepetidos[numeroUsuario]) {
+                        repetido = true;
+                        System.out.println("Número repetido. Introduce otro número.");
+                    } else {
+                        aposta[i] = numeroUsuario;
+                        numerosRepetidos[numeroUsuario] = true;
+                    }
+                } else {
+                    System.out.println("Número fuera del intervalo permitido (1-49). Introduce otro número.");
+                }
+            } while (repetido || !(numeroUsuario >= 1 && numeroUsuario <= 49));
         }
+
+        int ultimoNumero;
         do {
-            System.out.println("Introduce el ultimo numero(de 1 a 9):");
+            System.out.println("Introduce el último número (de 1 a 9):");
             while (!llegir.hasNextInt()) {
                 System.out.println("Entrada inválida. Introduce un número entero.");
                 llegir.next();
             }
-            ultimonumero = llegir.nextInt();
+            ultimoNumero = llegir.nextInt();
 
-            if (ultimonumero >= 1 && ultimonumero <= 9) {
-                aposta[6] = ultimonumero;
+            if (ultimoNumero >= 1 && ultimoNumero <= 9) {
+                aposta[6] = ultimoNumero;
             } else {
-                System.out.println("Número de reintegrament fora de l'interval permès.");
+                System.out.println("Número de reintegro fuera del intervalo permitido (1-9).");
             }
-        }while (!(ultimonumero >= 1 && ultimonumero <= 9));
+        } while (!(ultimoNumero >= 1 && ultimoNumero <= 9));
 
-        System.out.println("La teva aposta és: ");
-        for (int i = 0; i < aposta.length; i++) {
-            System.out.print(aposta[i] + " ");
-        }
-        System.out.println();
         return aposta;
     }
 
@@ -111,19 +125,29 @@ public class CognomNom_Primitiva {
      * @since 1.0
      */
 
-    private static int[] calcularCombinacioGuanyadora(){
-        int[] combinacio = new int[7];
+    private static int[] calcularCombinacioGuanyadora() {
+        int[] combinacion = new int[7];
         Random rand = new Random();
 
         for (int i = 0; i < 6; i++) {
             int num;
-            num = rand.nextInt(49) + 1;
-            combinacio[i] = num;
+            boolean repetido;
+            do {
+                repetido = false;
+                num = rand.nextInt(49) + 1;
+                for (int j = 0; j < i; j++) {
+                    if (combinacion[j] == num) {
+                        repetido = true;
+                        break;
+                    }
+                }
+            } while (repetido);
+            combinacion[i] = num;
         }
 
-        combinacio[6] = rand.nextInt(10);
+        combinacion[6] = rand.nextInt(10);
 
-        return combinacio;
+        return combinacion;
     }
 
 

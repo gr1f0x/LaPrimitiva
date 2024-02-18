@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a20561b9-b068-4f71-91c5-0f152d700b4b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LaPrimitiva - GRUP1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica_LaPrimitiva.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CognomNom_Primitiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CognomNom_Primitiva.java" afterDir="false" />
-    </list>
+    <list default="true" id="a20561b9-b068-4f71-91c5-0f152d700b4b" name="Changes" comment="Enlazado" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,6 +44,19 @@
       <option name="presentableId" value="Default" />
       <updated>1708070395756</updated>
     </task>
+    <task id="LOCAL-00001" summary="Enlazado">
+      <option name="closed" value="true" />
+      <created>1708286359709</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708286359709</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Enlazado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enlazado" />
   </component>
 </project>
