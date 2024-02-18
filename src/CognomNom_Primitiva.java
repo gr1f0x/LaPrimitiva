@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -56,18 +57,29 @@ public class CognomNom_Primitiva {
         return aposta;
     }
 
+
+
     /**
      * //TODO: Completar
      * @return //TODO: Completar
      * @since 1.0
      */
-    private static int[] calcularCombinacioGuanyadora(){
-        int[] combinacio = null;
 
-        //TODO: Fer el codi del mètode
+    private static int[] calcularCombinacioGuanyadora(){
+        int[] combinacio = new int[7];
+        Random rand = new Random();
+
+        for (int i = 0; i < 6; i++) {
+            int num;
+            num = rand.nextInt(49) + 1;
+            combinacio[i] = num;
+        }
+
+        combinacio[6] = rand.nextInt(10);
 
         return combinacio;
     }
+
 
     /**
      * //TODO: Completar
